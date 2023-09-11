@@ -1,0 +1,12 @@
+
+.custom-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.custom-card.selected {
+  background-color: green;
+  color: white;
+}

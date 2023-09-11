@@ -1,0 +1,32 @@
+<div class="container margin-space">
+    <h2 class="text-center">Results</h2>
+  </div>
+  
+  <div *ngFor="let question of quizQuestions" class="card mb-3">
+    <div class="card-body">
+      <p class="card-text" [innerHTML]="question.question"></p>
+      <div
+        *ngFor="let answer of question.options"
+        class="card answer-card"
+        [ngClass]="{
+          'correct-answer': question.correctAnswer === answer,
+          'wrong-answer':
+            question.selectedAnswer === answer &&
+            question.correctAnswer !== answer
+        }"
+      >
+        <div class="card-body" [innerHTML]="answer"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="score-container">
+    <h3>Final Score</h3>
+    <div class="score-bar">
+      <div class="score-fill" [ngStyle]="getScoreBarStyle()"></div>
+    </div>
+    <div class="score">You scored {{ calculateScore() }} out of 5</div>
+    <button class="btn btn-primary" (click)="goToNewQuizCreation()">
+      Create New Quiz
+    </button>
+  </div>

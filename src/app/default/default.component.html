@@ -1,0 +1,14 @@
+<div>
+    <app-quiz-selection (quizParameters)="loadQuiz($event)"></app-quiz-selection>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div *ngIf="quizLoading" class="text-center">
+            <h3>Loading quiz questions...</h3>
+            <div class="spinner-border text-secondary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <app-quiz [quizQuestions]="quizQuestions" *ngIf="quizQuestions.length > 0 && !quizLoading"></app-quiz>
+        </div>
+      </div>
+    </div>

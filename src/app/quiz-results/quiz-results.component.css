@@ -1,0 +1,44 @@
+.correct-answer {
+    background-color: green;
+  }
+  
+  .wrong-answer {
+    background-color: red;
+  }
+  
+  .score-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .score-bar {
+    height: 20px;
+    width: 200px;
+    background-color: #ccc;
+    display: inline-block;
+  }
+  
+  .score-fill {
+    height: 100%;
+    transition: width 0.5s;
+  }
+  
+  .score {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
+  
+  .green {
+    background-color: green;
+    color: white;
+  }
+  

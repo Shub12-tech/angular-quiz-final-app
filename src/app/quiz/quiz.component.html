@@ -1,0 +1,15 @@
+<!-- quiz-display.component.html -->
+<div class="container">
+  <h3>Quiz Questions</h3>
+  <form (submit)="submitQuiz()">
+    <div *ngFor="let question of quizQuestions; let i = index" class="card mb-3">
+      <div class="card-body">
+        <p class="card-text">{{ question.question }}</p>
+        <div *ngFor="let option of question.options; let j = index" class="custom-card" [class.selected]="question.selectedAnswer === option" (click)="selectedAnswer(question, option)">
+          {{ option }}
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
